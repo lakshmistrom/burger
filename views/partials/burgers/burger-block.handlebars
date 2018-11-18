@@ -1,6 +1,10 @@
 <li class="list-group-item d-flex justify-content-between align-items-center">
-	<span class="mr-2">{{burger_name}}</span>
-	<button type="button" class="btn btn-dark change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-		Devour it!
-	</button>
+	{{#unless devoured}}
+		<span class="mr-2">{{burger_name}}</span>
+		<button type="button" class="btn btn-dark change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+			Devour it!
+		</button>
+	{{else}}
+		<span class="mr-2 text-muted">{{burger_name}}</span>
+	{{/unless}}
 </li>
