@@ -1,7 +1,7 @@
 <div class="ml-3">
     <h1>Help Inspector Clouseau to Eat-Da-Damburger!</h1>
     <p>Enter a burger you want him to eat and then click the submit button.</p>
-    <form class="form-inline">
+    <form class="form-inline create-form">
         <div class="form-group">
             <label for="burgerName" class="sr-only">Burger Name</label>
             <input id="burgerName" class="form-control" type="text" placeholder="" />
@@ -13,20 +13,24 @@
     <img class="img-fluid w-100" src="assets/img/tenor.gif" />
     <div class="top-left">
         <h4 class="text-white">To be devoured:</h4>
-        <ul class="list-group">
-            {{#each burger}}
-            {{#unless devoured}}
-            {{> burgers/burger-block devoured=false}}
-            {{/unless}}
-            {{/each}}
-        </ul>
+        <div class="pre-scrollable">
+            <ul class="list-group">
+                {{#each burger}}
+                {{#unless devoured}}
+                {{> burgers/burger-block devoured=false}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
         <h4 class="text-white">Devoured: </h4>
-        <ul class="list-group">
-            {{#each burger}}
-            {{#if devoured}}
-            {{> burgers/burger-block devoured=true}}
-            {{/if}}
-            {{/each}}
-        </ul>
+        <div class="pre-scrollable">
+            <ul class="list-group">
+                {{#each burger}}
+                {{#if devoured}}
+                {{> burgers/burger-block devoured=true}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
     </div>
 </div>
